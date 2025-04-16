@@ -4,7 +4,7 @@ mysql << EOF
 CREATE DATABASE placement;
 GRANT ALL PRIVILEGES ON placement.* TO 'placement'@'localhost' IDENTIFIED BY 'Passw0rd';
 GRANT ALL PRIVILEGES ON placement.* TO 'placement'@'%' IDENTIFIED BY 'Passw0rd';
-EXIT;
+exit;
 EOF
 export OS_USERNAME=admin
 export OS_PASSWORD=Passw0rd
