@@ -4,6 +4,8 @@ echo '10.0.0.11 controller' >> /etc/hosts
 echo '10.0.0.31 compute1' >> /etc/hosts
 apt update -y && apt upgrade -y
 apt install python3-openstackclient -y
+echo 'PasswordAuthentication yes' > 60-cloudimg-settings.conf
+systemctl restart ssh
 
 # Install Chrony
 apt install chrony -y
@@ -22,7 +24,6 @@ leapsectz right/UTC
 server 0.vn.pool.ntp.org iburst
 allow 10.0.0.0/24
 EOF
-
 systemctl enable chronyd
 systemctl restart chronyd
 
