@@ -5,6 +5,7 @@ mysql << EOF
 CREATE DATABASE keystone;
 GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'localhost' IDENTIFIED BY 'Passw0rd';
 GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'%' IDENTIFIED BY 'Passw0rd';
+EXIT;
 EOF
 
 # Install and configure Keystone
