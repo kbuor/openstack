@@ -82,4 +82,5 @@ systemctl restart etcd
 clear
 
 echo "VUI LONG CHAY LENH INTI MYSQL DATABASE"
-echo "mysql_secure_installation"
+echo ""
+mysql_secure_installation
