@@ -1,10 +1,13 @@
 #!/bin/bash
 
 # Ceate the database
-mysql
+mysql <<EOF
 CREATE DATABASE keystone;
 GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'localhost' IDENTIFIED BY 'Passw0rd';
 GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'%' IDENTIFIED BY 'Passw0rd';
+FLUSH PRIVILEGES;
+EOF
+
 
 # Install and configure Keystone
 apt install -y keystone
