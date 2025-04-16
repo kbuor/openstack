@@ -65,7 +65,7 @@ systemctl restart memcached
 
 # Install Etcd
 apt install -y etcd-server
-cat <<EOF > /etc/etcd/etcd.conf
+cat <<EOF > /etc/default/etcd
 ETCD_NAME="controller"
 ETCD_DATA_DIR="/var/lib/etcd"
 ETCD_INITIAL_CLUSTER_STATE="new"
