@@ -24,11 +24,11 @@ leapsectz right/UTC
 server 0.vn.pool.ntp.org iburst
 allow 10.0.0.0/24
 EOF
-systemctl enable chronyd
-systemctl restart chronyd
+systemctl enable chrony
+systemctl restart chrony
 
 # Install SQL Database
-apt install mariadb-server python3-pymysql
+apt install mariadb-server python3-pymysql -y
 cat <<EOF > /etc/mysql/mariadb.conf.d/99-openstack.cnf
 [mysqld]
 bind-address = 10.0.0.11
