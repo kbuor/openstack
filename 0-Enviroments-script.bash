@@ -78,3 +78,8 @@ ETCD_LISTEN_CLIENT_URLS="http://10.0.0.11:2379"
 EOF
 systemctl enable etcd
 systemctl restart etcd
+
+clear
+
+echo "VUI LONG CHAY LENH INTI MYSQL DATABASE"
+echo "mysql_secure_installation"
