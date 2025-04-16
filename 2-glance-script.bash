@@ -14,7 +14,7 @@ export OS_PROJECT_DOMAIN_NAME=Default
 export OS_AUTH_URL=http://controller:5000/v3
 export OS_IDENTITY_API_VERSION=3
 
-openstack user create --domain default --password-prompt glance
+openstack user create --domain default --password 'Passw0rd' glance
 openstack role add --project service --user glance admin
 openstack service create --name glance --description "OpenStack Image" image
 openstack endpoint create --region RegionOne image public http://controller:9292
@@ -25,7 +25,7 @@ openstack registered limit create --service glance --default-limit 1000 --region
 openstack registered limit create --service glance --default-limit 100 --region RegionOne image_count_total
 openstack registered limit create --service glance --default-limit 100 --region RegionOne image_count_uploading
 
-apt install glance
+apt install glance -y
 cat <<'EOF' > /etc/glance/glance-api.conf
 [DEFAULT]
 enabled_backends=fs:file
