@@ -1,17 +1,15 @@
 #!/bin/bash
 
 # Ceate the database
-mysql <<EOF
+mysql << EOF
 CREATE DATABASE keystone;
 GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'localhost' IDENTIFIED BY 'Passw0rd';
 GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'%' IDENTIFIED BY 'Passw0rd';
-FLUSH PRIVILEGES;
 EOF
-
 
 # Install and configure Keystone
 apt install -y keystone
-cat <<EOF > /etc/keystone/keystone.conf
+cat <<'EOF' > /etc/keystone/keystone.conf
 [DEFAULT]
 log_dir = /var/log/keystone
 [application_credential]
@@ -69,7 +67,7 @@ keystone-manage bootstrap --bootstrap-password Passw0rd --bootstrap-admin-url ht
 
 
 # Configure the Apache HTTP server
-cat <<EOF > /etc/apache2/apache2.conf
+cat <<'EOF' > /etc/apache2/apache2.conf
 DefaultRuntimeDir ${APACHE_RUN_DIR}
 ServerName controller
 PidFile ${APACHE_PID_FILE}
@@ -115,7 +113,7 @@ EOF
 systemctl enable apache2
 systemctl restart apache2
 
-cat <<EOF > admin-openrc
+cat <<'EOF' > /root/admin-openrc
 export OS_USERNAME=admin
 export OS_PASSWORD=Passw0rd
 export OS_PROJECT_NAME=admin
@@ -125,5 +123,11 @@ export OS_AUTH_URL=http://controller:5000/v3
 export OS_IDENTITY_API_VERSION=3
 EOF
 
-sources admin-openrc
+export OS_USERNAME=admin
+export OS_PASSWORD=Passw0rd
+export OS_PROJECT_NAME=admin
+export OS_USER_DOMAIN_NAME=Default
+export OS_PROJECT_DOMAIN_NAME=Default
+export OS_AUTH_URL=http://controller:5000/v3
+export OS_IDENTITY_API_VERSION=3
 openstack project create --domain default --description "Service Project" service
