@@ -3,7 +3,7 @@ mysql << EOF
 CREATE DATABASE glance;
 GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'localhost' IDENTIFIED BY 'Passw0rd';
 GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'%' IDENTIFIED BY 'Passw0rd';
-EXIT;
+exit;
 EOF
 
 export OS_USERNAME=admin
