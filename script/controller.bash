@@ -103,7 +103,6 @@ mysql <<EOF
 CREATE DATABASE keystone;
 GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'localhost' IDENTIFIED BY 'Passw0rd';
 GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'%' IDENTIFIED BY 'Passw0rd';
-EXIT;
 EOF
 apt install -y keystone
 cat <<'EOF' > /etc/keystone/keystone.conf
@@ -231,7 +230,6 @@ mysql <<EOF
 CREATE DATABASE glance;
 GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'localhost' IDENTIFIED BY 'Passw0rd';
 GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'%' IDENTIFIED BY 'Passw0rd';
-EXIT;
 EOF
 source /root/admin-openrc
 openstack user create --domain default --password 'Passw0rd' glance
@@ -308,8 +306,8 @@ mysql <<EOF
 CREATE DATABASE placement;
 GRANT ALL PRIVILEGES ON placement.* TO 'placement'@'localhost' IDENTIFIED BY 'Passw0rd';
 GRANT ALL PRIVILEGES ON placement.* TO 'placement'@'%' IDENTIFIED BY 'Passw0rd';
-EXIT;
 EOF
+source /root/admin-openrc
 openstack user create --domain default --password 'Passw0rd' placement
 openstack role add --project service --user placement admin
 openstack service create --name placement --description "Placement API" placement
@@ -352,8 +350,8 @@ GRANT ALL PRIVILEGES ON nova.* TO 'nova'@'localhost' IDENTIFIED BY 'Passw0rd';
 GRANT ALL PRIVILEGES ON nova.* TO 'nova'@'%' IDENTIFIED BY 'Passw0rd';
 GRANT ALL PRIVILEGES ON nova_cell0.* TO 'nova'@'localhost' IDENTIFIED BY 'Passw0rd';
 GRANT ALL PRIVILEGES ON nova_cell0.* TO 'nova'@'%' IDENTIFIED BY 'Passw0rd';
-EXIT;
 EOF
+source /root/admin-openrc
 openstack user create --domain default --password 'Passw0rd' nova
 openstack role add --project service --user nova admin
 openstack service create --name nova --description "OpenStack Compute" compute
