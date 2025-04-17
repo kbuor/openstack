@@ -97,6 +97,8 @@ EOF
 systemctl enable --now etcd
 systemctl restart etcd
 
+apt install -y python3-openstackclient
+
 mysql <<EOF
 CREATE DATABASE keystone;
 GRANT ALL PRIVILEGES ON keystone.* TO 'keystone'@'localhost' IDENTIFIED BY 'Passw0rd';
