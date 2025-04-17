@@ -1,5 +1,6 @@
 #!/bin/bash
 
+hostnamectl set-hostname controller
 rm -rf /etc/netplan/50*
 cat <<'EOF' > /etc/netplan/99-netcfg-vmware.yaml
 network:
