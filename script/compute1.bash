@@ -24,6 +24,7 @@ EOF
 netplan apply
 
 echo "10.0.0.11 controller" >> /etc/hosts
+echo "10.0.0.32 compute2" >> /etc/hosts
 echo "PasswordAuthentication yes" > /etc/ssh/sshd_config.d/60-cloudimg-settings.conf
 systemctl restart ssh
 
