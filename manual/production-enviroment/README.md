@@ -8,10 +8,15 @@
 ## Server Design:
 1. Domain Controller: Windows Server 2022
 - Resource: 4 Core - 6GB RAM - 50GB SSD
-- IP: 10.21.4.100
+- Management IP: 10.21.4.100
 - Hostname: dc.openstack.local
 2. OpenStack Controller Node 01: Ubuntu 24.04 TLS
 - Resource: 4 Core - 8GB RAM - 50GB SSD
-- IP: 10.21.4.11
+- Management IP: 10.21.4.11
 - Hostname: controller01.openstack.local
 - Alias: keystone.kbuor.io.vn, glance.kbuor.io.vn, placement.kbuor.io.vn, nova.kbuor.io.vn
+3. OpenStack Neutron Node 01: Ubuntu 22.04 LTS
+- Resource: 2 Core - 4GB RAM - 50GB SSD
+- Management IP: 10.21.4.51
+- Hostname: neutron01.openstack.local
+- Alias: neutron.kbuor.io.vn
