@@ -14,7 +14,4 @@
 - Resource: 4 Core - 8GB RAM - 50GB SSD
 - IP: 10.21.4.11
 - Hostname: controller01.openstack.local
-- Alias:    keystone.kbuor.io.vn
-            glance.kbuor.io.vn
-            placement.kbuor.io.vn
-            nova.kbuor.io.vn
+- Alias: keystone.kbuor.io.vn, glance.kbuor.io.vn, placement.kbuor.io.vn, nova.kbuor.io.vn
