@@ -24,3 +24,7 @@
 Resource: 2 Core - 4GB RAM - 50GB SSD
 Management IP: 10.21.4.101
 Hostname: compute01.openstack.local
+5. OpenStack Neutron Node 01: Ubuntu 24.04 LTS
+Resource: 2 Core - 4GB RAM - 50GB SSD
+Management IP: 10.21.4.61
+Hostname: neutron01.openstack.local
