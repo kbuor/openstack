@@ -17,14 +17,10 @@
 - Alias: keystone.kbuor.io.vn, glance.kbuor.io.vn, placement.kbuor.io.vn, nova.kbuor.io.vn
 3. OpenStack Neutron Node 01: Ubuntu 24.04 LTS
 - Resource: 2 Core - 4GB RAM - 50GB SSD
-- Management IP: 10.21.4.51
+- Management IP: 10.21.4.61
 - Hostname: neutron01.openstack.local
 - Alias: neutron.kbuor.io.vn
 4. OpenStack Compute Node 01: Ubuntu 24.04 LTS
-Resource: 2 Core - 4GB RAM - 50GB SSD
-Management IP: 10.21.4.101
-Hostname: compute01.openstack.local
-5. OpenStack Neutron Node 01: Ubuntu 24.04 LTS
-Resource: 2 Core - 4GB RAM - 50GB SSD
-Management IP: 10.21.4.61
-Hostname: neutron01.openstack.local
+- Resource: 2 Core - 4GB RAM - 50GB SSD
+- Management IP: 10.21.4.101
+- Hostname: compute01.openstack.local
